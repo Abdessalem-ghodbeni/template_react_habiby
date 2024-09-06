@@ -18,6 +18,9 @@ import Home from "./Layouts/HomeLaouts/Home/Home.jsx";
 import Signup from "./Layouts/HomeLaouts/Signup/Signup.jsx";
 import ErrorPage from "./Layouts/HomeLaouts/ErrorPage/ErrorPage.jsx";
 import Signin from "./Layouts/HomeLaouts/Signin/Signin.jsx";
+import UserDashboard from "./Layouts/LayoutsUser/UserDashboard/UserDashboard.jsx";
+import ListeDemande from "./Layouts/LayoutsUser/Pages/LiseDemandes/ListeDemande.jsx";
+import AjoutDemande from "./Layouts/LayoutsUser/Pages/AjouterDemande/AjoutDemande.jsx";
 
 function App() {
   const navigate = useNavigate();
@@ -45,6 +48,10 @@ function App() {
 
       <Route path="/signin" element={<Signin />} />
       <Route path="*" element={<ErrorPage />} />
+      <Route path="/user" element={<UserDashboard />}>
+        <Route path="liste/demandes" element={<ListeDemande />} />
+        <Route path="ajout/demande" element={<AjoutDemande />} />
+      </Route>
     </Routes>
   );
 }
